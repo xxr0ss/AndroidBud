@@ -32,10 +32,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/run_shell_command"
                     android:src="@drawable/ic_launcher_foreground"/>
                 <TextView
                     style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:text="Run Shell Command"
+                    android:text="@string/run_shell_command"
                     android:textColor="@color/material_dynamic_neutral30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

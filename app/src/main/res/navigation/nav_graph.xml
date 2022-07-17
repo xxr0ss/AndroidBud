@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="re.xx.androidbud.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_shellCmdFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/shellCmdFragment"
         android:name="re.xx.androidbud.ShellCmdFragment"
-        android:label="fragment_shell_cmd"
+        android:label="@string/run_shell_command"
         tools:layout="@layout/fragment_shell_cmd" >
         <action
             android:id="@+id/action_shellCmdFragment_to_homeFragment"
