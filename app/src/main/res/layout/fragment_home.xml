@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:useDefaultMargins="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_run_shell_cmd"
+            android:layout_columnWeight="1"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_launcher_foreground"/>
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:text="Run Shell Command"
+                    android:textColor="@color/material_dynamic_neutral30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="5dp"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_columnWeight="1"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_launcher_foreground"/>
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/material_dynamic_neutral30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="5dp"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+</androidx.core.widget.NestedScrollView>
