@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="frida_servers">
+        <item>15.1.27</item>
+        <item>15.1.9</item>
+    </string-array>
+</resources>

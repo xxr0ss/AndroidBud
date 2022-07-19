@@ -8,4 +8,5 @@
     <string name="run_server">Run server</string>
     <string name="frida_server">frida_server</string>
     <string name="run_frida_server">run_frida_server</string>
+    <string name="version">Version</string>
 </resources>

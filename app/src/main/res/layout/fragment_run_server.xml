@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,10 +14,36 @@
         android:layout_height="wrap_content"
         android:text="@string/frida_server" />
 
-    <Button
-        android:id="@+id/button_run_frida_server"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/run_frida_server" />
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frida_server_list"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/version">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:padding="16dp"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                app:simpleItems="@array/frida_servers" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/button_run_frida_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run_frida_server" />
+    </LinearLayout>
+
 
 </LinearLayout>
