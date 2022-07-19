@@ -4,5 +4,8 @@
     <string name="main_fragment_label">Main Fragment</string>
     <string name="command">Command</string>
     <string name="run_command">Run</string>
-    <string name="run_shell_command">Run shell command</string>
+    <string name="shell_command">Shell command</string>
+    <string name="run_server">Run server</string>
+    <string name="frida_server">frida_server</string>
+    <string name="run_frida_server">run_frida_server</string>
 </resources>

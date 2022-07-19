@@ -7,20 +7,32 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="re.xx.androidbud.HomeFragment"
+        android:name="re.xx.androidbud.menu_fragments.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_shellCmdFragment"
             app:destination="@id/shellCmdFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_runServerFragment"
+            app:destination="@id/runServerFragment" />
     </fragment>
     <fragment
         android:id="@+id/shellCmdFragment"
-        android:name="re.xx.androidbud.ShellCmdFragment"
-        android:label="@string/run_shell_command"
+        android:name="re.xx.androidbud.menu_fragments.ShellCmdFragment"
+        android:label="@string/shell_command"
         tools:layout="@layout/fragment_shell_cmd" >
         <action
             android:id="@+id/action_shellCmdFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/runServerFragment"
+        android:name="re.xx.androidbud.menu_fragments.RunServerFragment"
+        android:label="Run server"
+        tools:layout="@layout/fragment_run_server" >
+        <action
+            android:id="@+id/action_runServerFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

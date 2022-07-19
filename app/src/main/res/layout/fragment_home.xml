@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".menu_fragments.HomeFragment">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -32,11 +32,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:contentDescription="@string/run_shell_command"
+                    android:contentDescription="@string/shell_command"
                     android:src="@drawable/ic_launcher_foreground"/>
                 <TextView
                     style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:text="@string/run_shell_command"
+                    android:text="@string/shell_command"
                     android:textColor="@color/material_dynamic_neutral30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,6 +48,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_run_server"
             android:layout_columnWeight="1"
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="wrap_content"
@@ -68,6 +69,7 @@
                 <TextView
                     style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:textColor="@color/material_dynamic_neutral30"
+                    android:text="@string/run_server"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"

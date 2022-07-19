@@ -1,4 +1,4 @@
-package re.xx.androidbud
+package re.xx.androidbud.menu_fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import re.xx.androidbud.R
 import re.xx.androidbud.databinding.FragmentHomeBinding
 
 
@@ -19,7 +20,7 @@ class HomeFragment : Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d(TAG, "onCreateView")
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -27,8 +28,12 @@ class HomeFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.cardRunShellCmd.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_shellCmdFragment)
+        }
+        binding.cardRunServer.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_runServerFragment)
         }
     }
 
