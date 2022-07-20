@@ -24,26 +24,14 @@
         android:id="@+id/shellCmdFragment"
         android:name="re.xx.androidbud.menu_fragments.ShellCmdFragment"
         android:label="@string/shell_command"
-        tools:layout="@layout/fragment_shell_cmd" >
-        <action
-            android:id="@+id/action_shellCmdFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_shell_cmd" />
     <fragment
         android:id="@+id/runServerFragment"
         android:name="re.xx.androidbud.menu_fragments.RunServerFragment"
         android:label="Run server"
-        tools:layout="@layout/fragment_run_server" >
-        <action
-            android:id="@+id/action_runServerFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_run_server" />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="re.xx.androidbud.SettingsFragment"
-        android:label="Settings" >
-        <action
-            android:id="@+id/action_settingsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        android:label="Settings" />
 </navigation>
