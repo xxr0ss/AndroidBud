@@ -1,12 +1,20 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory app:title="TODO">
+    <PreferenceCategory app:title="Servers">
 
         <EditTextPreference
-            app:key="signature"
-            app:title="TODO"
+            app:key="frida_server_name"
+            app:title="Frida server name"
+            app:defaultValue="frida-server-15.2.2-android-arm64"
             app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="frida_server_listening_address"
+            android:title="Frida server listening address"
+            app:defaultValue="0.0.0.0:27042"
+            app:useSimpleSummaryProvider="true"/>
 
     </PreferenceCategory>
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>

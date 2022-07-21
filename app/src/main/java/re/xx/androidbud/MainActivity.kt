@@ -1,5 +1,6 @@
 package re.xx.androidbud
 
+import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
@@ -12,11 +13,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import re.xx.androidbud.databinding.ActivityMainBinding
+import re.xx.androidbud.utils.SuperUser
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private val TAG = "MainActivity"
+    private var mainActivityMenu: Menu? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate")
@@ -32,18 +35,20 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         setupClipboardReceiver()
+
+        SuperUser.tryRoot(packageCodePath)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        mainActivityMenu = menu
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.action_settings -> {
-                findNavController(R.id.nav_host_fragment_content_main)
-                    .navigate(R.id.action_homeFragment_to_settingsFragment)
+                startActivity(Intent(this, SettingsActivity::class.java))
                 return true
             }
 

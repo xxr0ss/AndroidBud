@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Android Bud"
-include ':app'
+include(":app")

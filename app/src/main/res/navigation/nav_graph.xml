@@ -16,9 +16,6 @@
         <action
             android:id="@+id/action_homeFragment_to_runServerFragment"
             app:destination="@id/runServerFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/shellCmdFragment"
@@ -30,8 +27,4 @@
         android:name="re.xx.androidbud.menu_fragments.RunServerFragment"
         android:label="Run server"
         tools:layout="@layout/fragment_run_server" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="re.xx.androidbud.SettingsFragment"
-        android:label="Settings" />
 </navigation>

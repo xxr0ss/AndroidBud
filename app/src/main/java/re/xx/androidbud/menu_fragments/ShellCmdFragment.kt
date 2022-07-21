@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import re.xx.androidbud.databinding.FragmentShellCmdBinding
+import re.xx.androidbud.utils.SuperUser
 
 class ShellCmdFragment : Fragment() {
     private val TAG = "ShellCmdFragment"
@@ -24,6 +25,11 @@ class ShellCmdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // TODO implement running shell command
+
+        binding.buttonRunCmd.setOnClickListener {
+            val cmd = binding.shellCmdInput.text.toString()
+            if (cmd == "") return@setOnClickListener
+            binding.shellCmdOutput.text = SuperUser.execRootCmd(cmd)
+        }
     }
 }

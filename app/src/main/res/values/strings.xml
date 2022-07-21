@@ -6,7 +6,15 @@
     <string name="run_command">Run</string>
     <string name="shell_command">Shell command</string>
     <string name="run_server">Run server</string>
-    <string name="frida_server">frida_server</string>
-    <string name="run_frida_server">run_frida_server</string>
-    <string name="version">Version</string>
+
+    <!--    Settings-->
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!--    Fragment Run Server-->
+    <string name="frida_server">Frida server</string>
+    <string name="run">Run</string>
+    <string name="kill">Kill</string>
+    <string name="frida_server_status">Status(placeholder)</string>
+    <string name="listening_address">Listening Address</string>
+
 </resources>
