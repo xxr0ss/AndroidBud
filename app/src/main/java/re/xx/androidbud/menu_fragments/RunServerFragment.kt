@@ -44,7 +44,8 @@ class RunServerFragment : Fragment() {
         super.onResume()
         sharedPreferences =
             PreferenceManager.getDefaultSharedPreferences(activity!!.applicationContext)
-        fridaServerName = sharedPreferences.getString("frida_server_name", null)
+        fridaServerName =
+            sharedPreferences.getString("frida_server_name", "frida-server-15.2.2-android-arm64")
 
         binding.tvFridaListeningAddress.setText(
             sharedPreferences.getString(
