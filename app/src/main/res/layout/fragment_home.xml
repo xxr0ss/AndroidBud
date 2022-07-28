@@ -36,7 +36,6 @@
                     android:src="@drawable/ic_server"/>
                 <TextView
                     style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:textColor="@color/material_dynamic_neutral30"
                     android:text="@string/run_server"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -71,7 +70,6 @@
                 <TextView
                     style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:text="@string/shell_command"
-                    android:textColor="@color/material_dynamic_neutral30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
