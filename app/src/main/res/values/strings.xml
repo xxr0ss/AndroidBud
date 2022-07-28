@@ -16,5 +16,9 @@
     <string name="kill">Kill</string>
     <string name="frida_server_status">Status(placeholder)</string>
     <string name="listening_address">Listening Address</string>
+    <string name="plz_check_frida_server_exists">Please check if frida server exists</string>
+    <string name="server_started">Server started</string>
+    <string name="server_failed">Failed to start server</string>
+    <string name="server_killed">Server killed</string>
 
 </resources>

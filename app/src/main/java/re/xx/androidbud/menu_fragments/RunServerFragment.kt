@@ -6,8 +6,11 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
+import com.google.android.material.snackbar.Snackbar
+import re.xx.androidbud.R
 import re.xx.androidbud.databinding.FragmentRunServerBinding
 import re.xx.androidbud.utils.SuperUser
+import java.io.File
 
 // To run frida_server or IDA server
 class RunServerFragment : Fragment() {
@@ -36,7 +39,7 @@ class RunServerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonStartFridaServer.setOnClickListener { startFrdiaServer() }
+        binding.buttonStartFridaServer.setOnClickListener { startFridaServer() }
         binding.buttonKillFridaServer.setOnClickListener { killFridaServer() }
     }
 
@@ -53,28 +56,44 @@ class RunServerFragment : Fragment() {
         Log.d(TAG, "onResume")
     }
 
-    private fun startFrdiaServer() {
-        fridaServerName?.let {
-            val address = binding.tvFridaListeningAddress.text.toString().trim()
-            var extraArguments = ""
-            if (address != defaultFridaListeningAddress) {
-                extraArguments += "-l $address"
+    private fun startFridaServer() {
+        val serverFilePath = "$fridaServerDir/$fridaServerName"
+        if (!File(serverFilePath).exists()) {
+            view?.let {
+                Snackbar
+                    .make(it, R.string.plz_check_frida_server_exists, Snackbar.LENGTH_SHORT).show()
             }
-            killFridaServer()
-            SuperUser.execRootCmd("$fridaServerDir/$it $extraArguments", false)
-            Log.i(TAG, "start frida server")
+            return
         }
+        val address = binding.tvFridaListeningAddress.text.toString().trim()
+        var extraArguments = ""
+        if (address != defaultFridaListeningAddress) {
+            extraArguments += "-l $address"
+        }
+        killFridaServer(true)
+        SuperUser.execRootCmd("$serverFilePath $extraArguments", false)
+        val output = SuperUser.execRootCmd("ps -ef | grep frida-server")
+        if (fridaServerName?.let { output.contains(it) } == true) view?.let {
+            Snackbar
+                .make(it, R.string.server_started, Snackbar.LENGTH_SHORT).show()
+        }
+        else view?.let{
+            Snackbar
+                .make(it, R.string.server_failed, Snackbar.LENGTH_SHORT).show()
+        }
+
     }
 
-    private fun killFridaServer() {
+    private fun killFridaServer(quiet: Boolean=false) {
         fridaServerName?.let {
             SuperUser.execRootCmd("killall $it")
             Log.i(TAG, "kill frida server")
         }
-    }
-
-    private fun checkFridaServerExists() {
-        // TODO
+        if (!quiet) {
+            view?.let {
+                Snackbar.make(it, R.string.server_killed, Snackbar.LENGTH_SHORT).show()
+            }
+        }
     }
 
 
