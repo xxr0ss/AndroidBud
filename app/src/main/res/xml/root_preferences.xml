@@ -2,6 +2,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="Servers">
+        <EditTextPreference
+            app:key = "frida_server_dir"
+            android:title="Frida server directory"
+            app:defaultValue="/data/local/tmp"
+            app:useSimpleSummaryProvider="true"/>
 
         <EditTextPreference
             app:key="frida_server_name"

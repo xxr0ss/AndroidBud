@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
-import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import re.xx.androidbud.databinding.FragmentRunServerBinding
 import re.xx.androidbud.utils.SuperUser
 
@@ -15,8 +14,9 @@ class RunServerFragment : Fragment() {
     private val TAG = "RunServerFragment"
     private var _binding: FragmentRunServerBinding? = null
     private val binding get() = _binding!!
-    private lateinit var sharedPreferences: SharedPreferences
-    var fridaServerName: String? = null
+    private lateinit var sPrefs: SharedPreferences
+    private var fridaServerName: String? = null
+    private var fridaServerDir: String? = null
     private val defaultFridaListeningAddress = "0.0.0.0:27042"
 
 
@@ -42,38 +42,39 @@ class RunServerFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        sharedPreferences =
+        sPrefs =
             PreferenceManager.getDefaultSharedPreferences(activity!!.applicationContext)
-        fridaServerName =
-            sharedPreferences.getString("frida_server_name", "frida-server-15.2.2-android-arm64")
+        fridaServerDir = sPrefs.getString("Frida server directory", "/data/local/tmp")
+        fridaServerName = sPrefs.getString("frida_server_name", "frida-server-15.2.2-android-arm64")
 
         binding.tvFridaListeningAddress.setText(
-            sharedPreferences.getString(
-                "frida_server_listening_address",
-                defaultFridaListeningAddress
-            )
+            sPrefs.getString("frida_server_listening_address", defaultFridaListeningAddress)
         )
         Log.d(TAG, "onResume")
     }
 
-    fun startFrdiaServer() {
+    private fun startFrdiaServer() {
         fridaServerName?.let {
             val address = binding.tvFridaListeningAddress.text.toString().trim()
             var extraArguments = ""
             if (address != defaultFridaListeningAddress) {
                 extraArguments += "-l $address"
             }
-            SuperUser.execRootCmd("killall $it")
-            SuperUser.execRootCmd("/data/local/tmp/$it $extraArguments", false)
+            killFridaServer()
+            SuperUser.execRootCmd("$fridaServerDir/$it $extraArguments", false)
             Log.i(TAG, "start frida server")
         }
     }
 
-    fun killFridaServer() {
+    private fun killFridaServer() {
         fridaServerName?.let {
             SuperUser.execRootCmd("killall $it")
             Log.i(TAG, "kill frida server")
         }
+    }
+
+    private fun checkFridaServerExists() {
+        // TODO
     }
 
 
