@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        setupClipboardReceiver()
-
         SuperUser.tryRoot(packageCodePath)
     }
 
@@ -46,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
+        return when (item.itemId) {
             R.id.action_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
                 return true
@@ -61,16 +59,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
-    }
-
-    private fun setupClipboardReceiver() {
-        val cbReceiver = ClipboardReceiver()
-        val filter = IntentFilter().apply {
-            addAction(ClipboardReceiver.ACTION_SET)
-            addAction(ClipboardReceiver.ACTION_SET_SHORT)
-            addAction(ClipboardReceiver.ACTION_GET)
-            addAction(ClipboardReceiver.ACTION_GET_SHORT)
-        }
-        registerReceiver(cbReceiver, filter)
     }
 }
