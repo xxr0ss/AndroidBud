@@ -5,80 +5,102 @@
     android:layout_height="match_parent"
     tools:context=".menu_fragments.HomeFragment">
 
-    <GridLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
-        android:columnCount="2"
-        android:orientation="horizontal"
-        android:useDefaultMargins="true">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_run_server"
-            android:layout_columnWeight="1"
             style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:layout_height="match_parent">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:padding="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_server"/>
-                <TextView
-                    style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:text="@string/run_server"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_server"
+                    android:contentDescription="@string/run_server" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"/>
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/run_server" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/run_server_desc" />
+                </LinearLayout>
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_run_shell_cmd"
-            android:layout_columnWeight="1"
             style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:layout_height="match_parent">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:padding="10dp"
-                    android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/shell_command"
-                    android:src="@drawable/ic_command_line"/>
-                <TextView
-                    style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:text="@string/shell_command"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_command_line" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"/>
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/shell_command" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shell_cmd_desc" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-    </GridLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.core.widget.NestedScrollView>

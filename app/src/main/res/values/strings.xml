@@ -20,5 +20,7 @@
     <string name="server_started">Server started</string>
     <string name="server_failed">Failed to start server</string>
     <string name="server_killed">Server killed</string>
+    <string name="run_server_desc">Run/kill frida server, customized port is supported.</string>
+    <string name="shell_cmd_desc">Run shell command and get output.</string>
 
 </resources>
