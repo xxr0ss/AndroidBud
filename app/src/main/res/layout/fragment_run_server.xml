@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".menu_fragments.RunServerFragment">
+    tools:context=".bud_tools.RunServerFragment">
 
     <TextView
         style="@style/TextAppearance.MaterialComponents.Headline4"
@@ -30,15 +30,15 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/listening_address"
                 android:maxLines="1"
-                android:minWidth="140dp"/>
+                android:minWidth="140dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/button_start_frida_server"
-            android:layout_marginHorizontal="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:text="@string/run" />
 
         <Button
@@ -47,6 +47,31 @@
             android:layout_height="wrap_content"
             android:text="@string/kill" />
 
+    </LinearLayout>
+
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lldb_server" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_run_lldb_server"
+            android:text="@string/run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"/>
+
+        <Button
+            android:id="@+id/button_kill_lldb_server"
+            android:text="@string/kill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

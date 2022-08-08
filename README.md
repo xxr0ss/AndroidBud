@@ -8,6 +8,6 @@
 
 * Control clipboard with **adb**
 
-* Run common tool servers (Frida)
+* Run common tool servers (Frida, LLDB)
 
 * Run shell commands

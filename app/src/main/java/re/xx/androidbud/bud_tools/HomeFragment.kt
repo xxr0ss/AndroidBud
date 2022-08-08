@@ -1,4 +1,4 @@
-package re.xx.androidbud.menu_fragments
+package re.xx.androidbud.bud_tools
 
 import android.os.Bundle
 import android.util.Log

@@ -3,7 +3,7 @@
 
     <PreferenceCategory app:title="Servers">
         <EditTextPreference
-            app:key = "frida_server_dir"
+            app:key="frida_server_dir"
             android:title="Frida server directory"
             app:defaultValue="/data/local/tmp"
             app:useSimpleSummaryProvider="true"/>
@@ -20,6 +20,11 @@
             app:defaultValue="0.0.0.0:27042"
             app:useSimpleSummaryProvider="true"/>
 
+        <EditTextPreference
+            app:key="lldb_server_dir"
+            android:title="LLDB server directory"
+            app:defaultValue="/data/local/tmp"
+            app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>
