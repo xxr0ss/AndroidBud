@@ -5,7 +5,7 @@ import android.content.IntentFilter
 import android.os.Build
 import android.util.Log
 import androidx.preference.PreferenceManager
-import java.util.*
+
 
 class App : Application() {
     private val TAG = "App"

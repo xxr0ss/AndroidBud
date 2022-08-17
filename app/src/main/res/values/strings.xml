@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Android Bud</string>
     <string name="action_settings">Settings</string>
-    <string name="main_fragment_label">Main Fragment</string>
-    <string name="command">Command</string>
-    <string name="run_command">Run</string>
     <string name="shell_command">Shell command</string>
     <string name="run_server">Run server</string>
 
@@ -14,9 +11,7 @@
     <string name="frida_server">Frida server</string>
     <string name="run">Run</string>
     <string name="kill">Kill</string>
-    <string name="frida_server_status">Status(placeholder)</string>
     <string name="listening_address">Listening Address</string>
-    <string name="server_started">Server started</string>
     <string name="server_failed">Failed to start server</string>
     <string name="server_killed">Server killed</string>
     <string name="run_server_desc">Run/kill common servers</string>

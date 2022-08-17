@@ -1,7 +1,6 @@
 package re.xx.androidbud
 
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
