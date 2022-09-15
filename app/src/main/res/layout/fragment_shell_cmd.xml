@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
+            android:paddingTop="4dp"
             android:gravity="end"
             android:orientation="horizontal">
 
@@ -38,10 +39,14 @@
                 android:id="@+id/button_run_cmd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:text="@string/run"
-                android:textAllCaps="false" />
+                android:text="@string/run" />
+
+            <Button
+                android:id="@+id/button_run_su_cmd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/run_with_su"/>
         </LinearLayout>
 
         <HorizontalScrollView

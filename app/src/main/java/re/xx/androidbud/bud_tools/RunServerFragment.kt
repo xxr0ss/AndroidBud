@@ -7,10 +7,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.delay
 import re.xx.androidbud.R
 import re.xx.androidbud.databinding.FragmentRunServerBinding
-import re.xx.androidbud.utils.SuperUser
+import re.xx.androidbud.utils.Shell
 import java.io.File
 
 // To run frida_server or IDA server
@@ -99,9 +98,9 @@ class RunServerFragment : Fragment() {
         // Kill existing running server
         killServer(serverName, true)
 
-        SuperUser.execRootCmd("$serverFilePath $extraArguments", false)
+        Shell.execRootCmd("$serverFilePath $extraArguments", false)
 
-        val output = SuperUser.execRootCmd("ps -ef | grep $serverName | grep -v grep")
+        val output = Shell.execRootCmd("ps -ef | grep $serverName | grep -v grep")
         if (output.contains(serverName)) view?.let {
             Snackbar.make(it, "$serverName started", Snackbar.LENGTH_SHORT).show()
         } else view?.let {
@@ -112,7 +111,7 @@ class RunServerFragment : Fragment() {
     private fun killServer(serverName: String?, quiet: Boolean = false) {
         if (serverName == null)
             return
-        SuperUser.execRootCmd("killall $serverName")
+        Shell.execRootCmd("killall $serverName")
         Log.i(TAG, "kill server: $serverName")
         if (!quiet) {
             view?.let {

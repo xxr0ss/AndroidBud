@@ -17,5 +17,6 @@
     <string name="run_server_desc">Run/kill common servers</string>
     <string name="shell_cmd_desc">Run shell command and get output.</string>
     <string name="lldb_server">LLDB server</string>
+    <string name="run_with_su">Run with SU</string>
 
 </resources>

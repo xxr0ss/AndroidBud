@@ -3,8 +3,8 @@ package re.xx.androidbud.utils
 import android.util.Log
 import java.io.*
 
-object SuperUser {
-    private val TAG: String = "SuperUser"
+object Shell {
+    private val TAG: String = "Shell"
     var rooted = false
 
     fun tryRoot(pkgCodePath: String) {
@@ -24,6 +24,29 @@ object SuperUser {
             dos?.close()
             process?.destroy()
         }
+    }
+
+    // TODO 避免读取输出时的阻塞
+    fun execCmd(cmd: String, readOutput: Boolean=true): String {
+        var out=""
+        val process = Runtime.getRuntime().exec(cmd)
+        if (readOutput) {
+            var br = BufferedReader(InputStreamReader(process.inputStream))
+            var line: String?
+
+            while ((br.readLine().also { line = it }) != null) {
+                out += line + "\n"
+            }
+            br.close()
+            out += "\n"
+            br = BufferedReader(InputStreamReader(process.errorStream))
+            while ((br.readLine().also { line = it }) != null) {
+                out += line + "\n"
+            }
+            br.close()
+        }
+
+        return out;
     }
 
     fun execRootCmd(cmd: String, readOutput: Boolean = true): String {

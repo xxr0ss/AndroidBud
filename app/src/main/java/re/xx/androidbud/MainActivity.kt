@@ -12,7 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import re.xx.androidbud.databinding.ActivityMainBinding
-import re.xx.androidbud.utils.SuperUser
+import re.xx.androidbud.utils.Shell
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -33,7 +33,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        SuperUser.tryRoot(packageCodePath)
+        Shell.tryRoot(packageCodePath)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

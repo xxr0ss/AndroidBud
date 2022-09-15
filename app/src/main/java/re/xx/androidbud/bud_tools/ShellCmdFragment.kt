@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import re.xx.androidbud.databinding.FragmentShellCmdBinding
-import re.xx.androidbud.utils.SuperUser
+import re.xx.androidbud.utils.Shell
 
 class ShellCmdFragment : Fragment() {
     private val TAG = "ShellCmdFragment"
@@ -29,7 +29,13 @@ class ShellCmdFragment : Fragment() {
         binding.buttonRunCmd.setOnClickListener {
             val cmd = binding.shellCmdInput.text.toString()
             if (cmd == "") return@setOnClickListener
-            binding.shellCmdOutput.text = SuperUser.execRootCmd(cmd)
+            binding.shellCmdOutput.text = Shell.execCmd(cmd)
+        }
+
+        binding.buttonRunSuCmd.setOnClickListener {
+            val cmd = binding.shellCmdInput.text.toString()
+            if (cmd == "") return@setOnClickListener
+            binding.shellCmdOutput.text = Shell.execRootCmd(cmd)
         }
     }
 }
