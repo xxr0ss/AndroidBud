@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@drawable/ic_server"
+        android:shortcutId="Server"
+        android:shortcutShortLabel="@string/run_server">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="re.xx.androidbud.MainActivity"
+            android:targetPackage="re.xx.androidbud">
+            <extra android:name="shortcut_target" android:value="run_server" />
+            <categories android:name="android.shortcut.conversation" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:icon="@drawable/ic_command_line"
+        android:shortcutId="CMD"
+        android:shortcutShortLabel="@string/shell_command">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="re.xx.androidbud.MainActivity"
+            android:targetPackage="re.xx.androidbud">
+            <extra android:name="shortcut_target" android:value="run_shell_cmd" />
+            <categories android:name="android.shortcut.conversation" />
+        </intent>
+    </shortcut>
+</shortcuts>
