@@ -21,6 +21,7 @@ class RunServerFragment : Fragment() {
     private var fridaServerName: String? = null
     private var fridaServerDir: String? = null
     private val defaultFridaListeningAddress = "0.0.0.0:27042"
+    private val defaultLldbListeningPort = "6666"
     private var lldbServerName: String? = null
     private var lldbServerDir: String? = null
 
@@ -51,7 +52,10 @@ class RunServerFragment : Fragment() {
         }
         binding.buttonKillFridaServer.setOnClickListener { killServer(fridaServerName) }
         binding.buttonRunLldbServer.setOnClickListener {
-            val extraArguments = "p --server --listen unix-abstract:///data/local/tmp/debug.sock"
+            val useTcp = binding.switchLldb.isChecked
+            val extraArguments = if (useTcp)
+                "platform --server --listen \"*:${binding.tvLldbListeningPort.text}\""
+                else "platform --server --listen unix-abstract:///data/local/tmp/debug.sock"
             startServer(lldbServerDir, lldbServerName, extraArguments)
         }
         binding.buttonKillLldbServer.setOnClickListener { killServer(lldbServerName) }
@@ -68,6 +72,9 @@ class RunServerFragment : Fragment() {
 
         binding.tvFridaListeningAddress.setText(
             sPrefs.getString("frida_server_listening_address", defaultFridaListeningAddress)
+        )
+        binding.tvLldbListeningPort.setText(
+            sPrefs.getString("lldb_server_listening_port", defaultLldbListeningPort)
         )
         Log.d(TAG, "onResume")
     }

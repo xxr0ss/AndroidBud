@@ -11,12 +11,16 @@
     <string name="frida_server">Frida server</string>
     <string name="run">Run</string>
     <string name="kill">Kill</string>
-    <string name="listening_address">Listening Address</string>
+    <string name="listening_address">Listening address</string>
+    <string name="listening_port">Listening port</string>
     <string name="server_failed">Failed to start server</string>
     <string name="server_killed">Server killed</string>
     <string name="run_server_desc">Run/kill common servers</string>
     <string name="shell_cmd_desc">Run shell command and get output.</string>
     <string name="lldb_server">LLDB server</string>
+    <string name="via_tcp">via TCP</string>
+
+    <!--    Fragment Run Command-->
     <string name="run_with_su">Run with SU</string>
 
 </resources>

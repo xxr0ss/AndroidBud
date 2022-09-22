@@ -16,8 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:gravity="center_vertical">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
@@ -30,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/listening_address"
                 android:maxLines="1"
-                android:minWidth="140dp" />
+                android:minWidth="170dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,13 +50,46 @@
 
 
     <TextView
+        android:layout_marginTop="20dp"
         style="@style/TextAppearance.MaterialComponents.Headline4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lldb_server" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_lldb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/via_tcp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_lldb_listening_port"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/listening_port"
+                android:maxLines="1"
+                android:inputType="number"
+                android:minWidth="140dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button

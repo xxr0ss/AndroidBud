@@ -25,6 +25,12 @@
             android:title="LLDB server directory"
             app:defaultValue="/data/local/tmp"
             app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference
+            app:key="lldb_server_listening_port"
+            android:title="LLDB server listening port"
+            android:defaultValue="6666"
+            app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>
