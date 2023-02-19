@@ -11,7 +11,7 @@
         <EditTextPreference
             app:key="frida_server_name"
             app:title="Frida server name"
-            app:defaultValue="frida-server-15.2.2-android-arm64"
+            app:defaultValue="frida-server-16.0.10-android-arm64"
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference

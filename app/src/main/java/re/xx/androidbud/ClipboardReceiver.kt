@@ -6,12 +6,12 @@ import android.widget.Toast
 
 class ClipboardReceiver : BroadcastReceiver() {
     companion object {
-        val ACTION_GET = "clip.get"
-        val ACTION_GET_SHORT = "get"
-        val ACTION_SET = "clip.set"
-        val ACTION_SET_SHORT = "set"
-        val TAG = "ClipboardReceiver"
-        val EXTRA_TEXT = "text"
+        const val ACTION_GET = "clip.get"
+        const val ACTION_GET_SHORT = "get"
+        const val ACTION_SET = "clip.set"
+        const val ACTION_SET_SHORT = "set"
+        const val TAG = "ClipboardReceiver"
+        const val EXTRA_TEXT = "text"
     }
 
     fun isActionGet(action: String?) : Boolean {

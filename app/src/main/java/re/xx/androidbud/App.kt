@@ -8,7 +8,6 @@ import androidx.preference.PreferenceManager
 
 
 class App : Application() {
-    private val TAG = "App"
     private val keyFirstStart = "isFirstStart"
 
     override fun onCreate() {
@@ -60,5 +59,9 @@ class App : Application() {
             addAction(ClipboardReceiver.ACTION_GET_SHORT)
         }
         registerReceiver(cbReceiver, filter)
+    }
+
+    companion object {
+        const val TAG = "App"
     }
 }

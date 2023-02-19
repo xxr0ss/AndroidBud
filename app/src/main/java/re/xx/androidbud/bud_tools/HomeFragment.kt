@@ -12,7 +12,6 @@ import re.xx.androidbud.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment(){
-    private val TAG = "HomeFragment"
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -40,5 +39,9 @@ class HomeFragment : Fragment(){
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    companion object {
+        const val TAG = "HomeFragment"
     }
 }

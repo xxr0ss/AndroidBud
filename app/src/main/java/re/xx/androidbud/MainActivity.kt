@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    private val TAG = "MainActivity"
     private var mainActivityMenu: Menu? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,5 +69,9 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    companion object {
+        const val TAG = "MainActivity"
     }
 }

@@ -14,7 +14,6 @@ import java.io.File
 
 // To run frida_server or IDA server
 class RunServerFragment : Fragment() {
-    private val TAG = "RunServerFragment"
     private var _binding: FragmentRunServerBinding? = null
     private val binding get() = _binding!!
     private lateinit var sPrefs: SharedPreferences
@@ -125,5 +124,9 @@ class RunServerFragment : Fragment() {
                 Snackbar.make(it, R.string.server_killed, Snackbar.LENGTH_SHORT).show()
             }
         }
+    }
+
+    companion object {
+        const val TAG = "RunServerFragment"
     }
 }

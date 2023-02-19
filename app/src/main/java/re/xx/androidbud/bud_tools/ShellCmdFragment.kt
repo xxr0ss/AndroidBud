@@ -10,7 +10,6 @@ import re.xx.androidbud.databinding.FragmentShellCmdBinding
 import re.xx.androidbud.utils.Shell
 
 class ShellCmdFragment : Fragment() {
-    private val TAG = "ShellCmdFragment"
     private var _binding: FragmentShellCmdBinding? = null
     private val binding get() = _binding!!
 
@@ -37,5 +36,9 @@ class ShellCmdFragment : Fragment() {
             if (cmd == "") return@setOnClickListener
             binding.shellCmdOutput.text = Shell.execRootCmd(cmd)
         }
+    }
+
+    companion object {
+        const val TAG = "ShellCmdFragment"
     }
 }
